@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './HomeScreen';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import AddProductPage from './pages/AddProductPage';
 
 const Drawer = createDrawerNavigator();
 
@@ -37,7 +38,7 @@ export default function App() {
             <Drawer.Screen name="Ürünlerim" component={HomeScreen} />
             <Drawer.Screen name="Siparişlerim" component={HomeScreen} />
             <Drawer.Screen name="Gelen Siparişler" component={HomeScreen} />
-            <Drawer.Screen name="Ürün Ekle" component={HomeScreen} />
+            <Drawer.Screen name="Ürün Ekle" component={AddProductPage} />
             <Drawer.Screen name="Sepetim" component={HomeScreen} />
         <Drawer.Screen name="Çıkış Yap" component={ProfileScreen} />
         
