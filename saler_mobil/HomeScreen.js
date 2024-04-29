@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import ProductsPage from './components/ProductsPage';
 import { getProducts } from './server/api';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function HomeScreen() {
   const [products, setProducts] = useState([]);
@@ -9,7 +10,7 @@ export default function HomeScreen() {
   useEffect(() => {
     getProducts()
       .then((res) => {
-        console.log(res.data);
+        
         setProducts(res.data);
       })
       .catch((err) => {
@@ -22,9 +23,14 @@ export default function HomeScreen() {
   );
 
   return (
-    <View style={styles.input}>
-       <Text>Burada Ürünler olacak</Text>
-    </View>
+    <ScrollView >
+      <Text style={styles.input}>Ürünler</Text>
+      {
+        products.map((product,index) => {
+          return <ProductsPage key={index} product={product}></ProductsPage>
+        })
+      }
+    </ScrollView>
   );
 }
 

@@ -1,9 +1,9 @@
 import axios from "axios";
 
 
-var url = 'api/v1/'
-axios.defaults.baseURL = 'http://localhost:5262/';
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+var url = 'https://proje2024.bsite.net/api/v1/'
+
+
 
 /* user işlemleri */
 
