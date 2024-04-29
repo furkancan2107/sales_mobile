@@ -38,7 +38,7 @@ const ProductsPage = ({ product }) => {
                 .then((res) => {
                     if (res.status == 200) {
                         Alert.alert("Başarılı", "Ürün Sepete Eklendi");
-                        navigation.navigate("Carts");
+                        
                     }
                 })
                 .catch((err) => {

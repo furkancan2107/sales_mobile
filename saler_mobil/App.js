@@ -8,7 +8,7 @@ import RegisterPage from './pages/RegisterPage';
 import AddProductPage from './pages/AddProductPage';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Button } from 'react-native-paper';
-import RNRestart from 'react-native-restart';
+import CartPage from './pages/CartPage';
 
 const Drawer = createDrawerNavigator();
 
@@ -41,9 +41,9 @@ export default function App() {
 
   const interval = setInterval(() => {
     getLoginStatus();
-  }, 5000); // Örneğin, her 5 saniyede bir çalışacak şekilde ayarlayabilirsiniz
+  }, 5000); 
 
-  // useEffect fonksiyonu her seferinde çalıştığında interval'i temizlemek önemlidir
+  
   return () => clearInterval(interval);
 }, []);
 
@@ -68,7 +68,7 @@ console.log(login)
           <Drawer.Screen name="Siparişlerim" component={HomeScreen} />
           <Drawer.Screen name="Gelen Siparişler" component={HomeScreen} />
           <Drawer.Screen name="Ürün Ekle" component={AddProductPage} />
-          <Drawer.Screen name="Sepetim" component={HomeScreen} />
+          <Drawer.Screen name="Sepetim" component={CartPage} />
           <Drawer.Screen name="Çıkış Yap" >
             {props => <ProfileScreen {...props} handleLogout={handleLogout} />}
           </Drawer.Screen>

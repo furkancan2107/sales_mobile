@@ -8,6 +8,10 @@ export default function HomeScreen() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+    
+    
+    
+  const interval = setInterval(() => {
     getProducts()
       .then((res) => {
         
@@ -16,6 +20,10 @@ export default function HomeScreen() {
       .catch((err) => {
         console.error("Error fetching products:", err);
       });
+  }, 5000); 
+
+  
+  return () => clearInterval(interval);
   }, []);
 
   const renderProduct = ({ item }) => (
