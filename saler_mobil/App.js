@@ -9,6 +9,7 @@ import AddProductPage from './pages/AddProductPage';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Button } from 'react-native-paper';
 import CartPage from './pages/CartPage';
+import OrderPage from './pages/OrderPage';
 
 const Drawer = createDrawerNavigator();
 
@@ -65,7 +66,7 @@ console.log(login)
         <Drawer.Navigator initialRouteName="Anasayfa">
           <Drawer.Screen name="Anasayfa" component={HomeScreen} />
           <Drawer.Screen name="Ürünlerim" component={HomeScreen} />
-          <Drawer.Screen name="Siparişlerim" component={HomeScreen} />
+          <Drawer.Screen name="Siparişlerim" component={OrderPage} />
           <Drawer.Screen name="Gelen Siparişler" component={HomeScreen} />
           <Drawer.Screen name="Ürün Ekle" component={AddProductPage} />
           <Drawer.Screen name="Sepetim" component={CartPage} />

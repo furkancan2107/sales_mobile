@@ -21,7 +21,7 @@ export default function CartPage() {
             setUserId(id);
             console.log("id: " + id);
         } catch (error) {
-            console.error('Error getting user ID:', error);
+            console.error('Error getting user ID:', error.response.data);
         }
     };
 
