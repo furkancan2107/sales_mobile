@@ -14,14 +14,23 @@ const ProductsPage = ({ product }) => {
 
     
     useEffect(() => {
-      getUserID();
-      console.log(USERID);
+        const interval = setInterval(() => {
+            getUserID();
+            console.log("user: " +USERID);
+  }, 5000); 
+
+  
+  return () => clearInterval(interval);
+      
     }, []);
 
     const getUserID = async () => {
         try {
            const id = JSON.parse(await AsyncStorage.getItem('id'));
-          setUSERID(id);
+            setUSERID(id);
+            if (id == null) {
+                setUSERID(null);
+            }
           console.log("id: "+id)
         } catch (error) {
             console.error('Error getting user ID:', error);

@@ -24,7 +24,13 @@ const LoginPage = () => {
     };
   
     useEffect(() => {
-        checkLoginStatus();
+        const interval = setInterval(() => {
+            checkLoginStatus();
+  }, 5000); 
+
+  
+  return () => clearInterval(interval);
+      
     }, []);
 
     const inputChange = (name, value) => {
