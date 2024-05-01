@@ -1,9 +1,6 @@
 import axios from "axios";
 
-
 var url = 'https://proje2024.bsite.net/api/v1/'
-
-
 
 /* user işlemleri */
 
@@ -57,7 +54,7 @@ export const getProduct =async (id) => {
 }
 // list
 export const getProducts =async () => {
-    var res =await axios.get(url + "Product/products");
+    var res =await   axios.get(url + "Product/products");
     return res;
 }
 // list/userId
@@ -97,9 +94,17 @@ export const cancelOrder =async (orderId) => {
     return res;
 }
 // update Order Status
+export const updateOrderStatus =async (orderId,body) => {
+    var res =await  axios.put(url + "Order/updateOrderStatus/"+orderId,body);
+    return res;
+}
 // yapılan siparişler listesi
 export const getOrders =async (userId) => {
     var res =await  axios.get(url + "Order/"+userId);
     return res;
 }
 // gelen siparişler listesi 
+export const getInComingOrders =async (userId) => {
+    var res =await  axios.get(url + "Order/getOrders/"+userId);
+    return res;
+}
