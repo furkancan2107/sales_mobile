@@ -11,6 +11,7 @@ import { Button } from 'react-native-paper';
 import CartPage from './pages/CartPage';
 import OrderPage from './pages/OrderPage';
 import InComingOrdersPage from './pages/InComingOrdersPage';
+import MyProductsPage from './pages/MyProductsPage';
 
 const Drawer = createDrawerNavigator();
 
@@ -62,11 +63,12 @@ export default function App() {
   };
 console.log(login)
   return (
+    
     <NavigationContainer>
       {isLogin ? (
         <Drawer.Navigator initialRouteName="Anasayfa">
           <Drawer.Screen name="Anasayfa" component={HomeScreen} />
-          <Drawer.Screen name="Ürünlerim" component={HomeScreen} />
+          <Drawer.Screen name="Ürünlerim" component={MyProductsPage} />
           <Drawer.Screen name="Siparişlerim" component={OrderPage} />
           <Drawer.Screen name="Gelen Siparişler" component={InComingOrdersPage} />
           <Drawer.Screen name="Ürün Ekle" component={AddProductPage} />

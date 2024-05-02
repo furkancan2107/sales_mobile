@@ -47,8 +47,12 @@ const InComingList = ({ order }) => {
             <Image source={{ uri: image }} style={styles.image} />
             <Text style={styles.title}>{title}</Text>
             <Text style={styles.description}>{description}</Text>
+             <View style={styles.status}>
+<Text>{orderStatus}</Text>
+                </View>
             <View style={styles.statusContainer}>
-                <Text style={styles.statusLabel}>Sipariş Durumu:</Text>
+                <Text style={styles.statusLabel}>Sipariş Durumunu Değiştir:</Text>
+                
                 <Picker
                     selectedValue={orderS}
                     style={{ height: 50, width: 200 }}
@@ -106,6 +110,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
+    status: {
+        flexDirection : 'column'
+    }
 });
 
 export default InComingList;
