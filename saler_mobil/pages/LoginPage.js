@@ -26,10 +26,9 @@ const LoginPage = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             checkLoginStatus();
-  }, 5000); 
+        }, 5000); 
 
-  
-  return () => clearInterval(interval);
+        return () => clearInterval(interval);
       
     }, []);
 
@@ -59,6 +58,10 @@ const LoginPage = () => {
     const handleSignUp = () => {
         navigation.navigate("Kayıt ol");
     };
+    
+    const handleForgotPasswordLink=() => {
+        navigation.navigate("Şifremi Unuttum");
+    }
 
     return (
         <View style={styles.container}>
@@ -82,9 +85,17 @@ const LoginPage = () => {
                 />
                 <Button color={'white'} title='Giriş' onPress={buttonClick} />
             </View>}
-            <TouchableOpacity style={styles.link} onPress={handleSignUp}>
-                <Text>Kayıt Ol</Text>
-            </TouchableOpacity>
+           
+            <View style={styles.linksContainer}>
+                <TouchableOpacity style={styles.link} onPress={handleSignUp}>
+                    <Text>Kayıt Ol</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.link} onPress={handleForgotPasswordLink}>
+                    <Text>Şifremi Unuttum</Text>
+                </TouchableOpacity>
+                
+            </View>
+             
         </View>
     );
 };
@@ -110,9 +121,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     link: {
-        marginRight: 200,
-        marginTop: 20,
-        alignItems: 'flex-start'
+        alignItems: 'center',
+        marginRight: 50,
+        marginLeft : 50,
+    },
+    linksContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginTop: 30,
     },
     errorContainer: {
         backgroundColor: 'red',

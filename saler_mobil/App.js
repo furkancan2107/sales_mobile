@@ -12,6 +12,7 @@ import CartPage from './pages/CartPage';
 import OrderPage from './pages/OrderPage';
 import InComingOrdersPage from './pages/InComingOrdersPage';
 import MyProductsPage from './pages/MyProductsPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 
 const Drawer = createDrawerNavigator();
 
@@ -81,7 +82,8 @@ console.log(login)
         <Drawer.Navigator initialRouteName="Anasayfa">
           <Drawer.Screen name="Anasayfa" component={HomeScreen} />
           <Drawer.Screen name="Giriş Yap" component={LoginPage} />
-          <Drawer.Screen name="Kayıt ol" component={RegisterPage} />
+            <Drawer.Screen name="Kayıt ol" component={RegisterPage} />
+            <Drawer.Screen name="Şifremi Unuttum" component={ForgotPasswordPage} />
         </Drawer.Navigator>
       )}
     </NavigationContainer>
