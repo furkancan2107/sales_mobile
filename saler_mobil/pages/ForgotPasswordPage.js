@@ -8,7 +8,10 @@ export default function ForgotPasswordPage() {
     const navigation = useNavigation();
     const handleLogin=() => {
        navigation.navigate("Giriş Yap")
-    }
+  }
+  const send = () => {
+    
+  }
   return (
      <View>
         <SafeAreaView style={styles.container}>
